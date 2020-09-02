@@ -23,6 +23,20 @@ describe("Add Two Numbers", function() {
             done()
           });
     });
+    it("returns the result equal to 8", function(done) {
+      request(url, function(error, response, body) {
+          body = JSON.parse(body)
+          expect(body.result).to.equal(8);
+          done()
+        });
+  });
+  it("returns the result not equal to 15", function(done) {
+    request(url, function(error, response, body) {
+        body = JSON.parse(body)
+        expect(body.result).to.not.equal(15);
+        done()
+      });
+});
   });
 
   describe("Add Two strings", function() {
