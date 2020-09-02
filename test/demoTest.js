@@ -9,7 +9,7 @@ describe("Add Two Numbers", function() {
             done()
           });
     });
-    it("returns statusCode key in body to check if api give right result", function(done) {
+    it("returns statusCode key in body to check if api give right result should be 200", function(done) {
         request(url, function(error, response, body) {
             body = JSON.parse(body)
             expect(body.statusCode).to.equal(200);
@@ -33,14 +33,14 @@ describe("Add Two Numbers", function() {
             done()
           });
     });
-    it("returns statusCode key in body to check if api gives right result", function(done) {
+    it("returns statusCode key in body to check if api gives right result should be 400", function(done) {
         request(url, function(error, response, body) {
             body = JSON.parse(body)
             expect(body.statusCode).to.equal(400);
             done()
           });
     });
-    it("returns the result as number", function(done) {
+    it("returns the result as null", function(done) {
         request(url, function(error, response, body) {
             body = JSON.parse(body)
             expect(body.result).to.be.a('null');
